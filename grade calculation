@@ -1,0 +1,111 @@
+class HelloWorld {
+    public static void main(String[] args) {
+        
+        Scanner scanner = new Scanner(System.in);
+        
+        /
+        System.out.println("Enter marks obtained in each subject (out of 100):");
+        int numSubjects = 0;
+        int totalMarks = 0;
+        
+        while (true) {
+            System.out.print("Subject " + (numSubjects + 1) + ": ");
+            int marks = scanner.nextInt();
+            
+            if (marks < 0 || marks > 100) {
+                System.out.println("Marks should be between 0 and 100.");
+            } else {
+                totalMarks += marks;
+                numSubjects++;
+            }
+            
+            System.out.print("Do you want to enter marks for another subject? (yes/no): ");
+            String choice = scanner.next();
+            if (!choice.equalsIgnoreCase("yes")) {
+                break;
+            }
+        }
+        
+        
+        System.out.println("Total Marks: " + totalMarks);
+        
+    
+        double averagePercentage = (double) totalMarks / numSubjects;
+        System.out.println("Average Percentage: " + averagePercentage);
+        
+        
+        char grade;
+        if (averagePercentage >= 90) {
+            grade = 'A';
+        } else if (averagePercentage >= 80) {
+            grade = 'B';
+        } else if (averagePercentage >= 70) {
+            grade = 'C';
+        } else if (averagePercentage >= 60) {
+            grade = 'D';
+        } else if (averagePercentage >= 50) {
+            grade = 'E';
+        } else {
+            grade = 'F';
+        }
+        
+        
+        System.out.println("Grade: " + grade);
+        
+        scanner.close();
+    }
+}
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.*;
+class HelloWorld {
+    public static void main(String[] args) {
+        
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.println("enter marks obtained i each subject(out of 100):");
+        int noSubject=0;
+        int totalMarks=0;
+        while(true){
+            
+            System.out.print("subject :"+(noSubject+1)+" ");
+            int marks=sc.nextInt();
+            totalMarks+=marks;
+            noSubject++;
+            System.out.println("Do you want to enter another subject marks? (1=yes/0=no): ");
+            int check=sc.nextInt();
+            if(check==0){
+                break;
+            }
+        }
+       System.out.println("total marks : "+totalMarks);
+       double avgPer=(double)totalMarks/noSubject;
+       System.out.println("Average percentage: "+avgPer);
+       String grade="";
+       if(avgPer>90 && avgPer<=100){
+           grade="O";
+       }
+       else if(avgPer>80 && avgPer<=90){
+           grade="A+";
+       }
+       else if(avgPer>70 && avgPer<=80){
+           grade="A";
+       }
+       else if(avgPer>60 && avgPer<=70){
+           grade="B";
+       }
+       else if(avgPer>50 && avgPer<=60){
+           grade="C";
+       }
+       else{
+           grade="F";
+       }
+       System.out.print(" your Grade : "+grade);
+       
+    }
+}
+
+    
+
+
+    
